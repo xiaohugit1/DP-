@@ -1,25 +1,24 @@
-#include<iostream>
-#include<algorithm>
-long long count=100000;
+#include<bits/stdc++.h>
 using namespace std;
 int memo[10000];
-int mec(long long change,memo[]){
+long long cnt=0;
+int mec(long long change,long long memo[]){
 	if(change==0)return 0;
 	if (change<0)return -1;
 	if(memo[change]==0){
 		if(change>=5){
-			count=min(count,1+mec(change-5,memo));
+			cnt=min(count,1+mec(change-5,memo));
 		} 
 		if(change>=2) {
-			count=min(count,1+mec(change-2,memo));
+			cnt=min(count,1+mec(change-2,memo));
 		}
 		if(change>=1){ 
-			count=min(count,1+mec(change-1,memo));
+			cnt=min(count,1+mec(change-1,memo));
 		}
-		memo[change]=count;
+		memo[change]=cnt;
 	}
 	return memo[change];
 }
 int main(){
-	cout<< min(11,5);
+	cout<< mec(100000,memo);
 }
