@@ -1,10 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 int memo[1000000];
-int cnt=10000;
+
 int mec(int change,int memo[]){
 	if(change==0)return 0;
 	if (change<0)return -1;
+	int cnt=10000;
 	if(memo[change]==0){
 		if(change>=5){
 			cnt=min(cnt,1+mec(change-5,memo));
