@@ -12,7 +12,7 @@ void mec(int change,int memo[]){
 	for(int i=0;i<change;i++){
 		for(int j=0;j<num;j++){
 			if(i>=coins[j]){
-				int tmp=memo[i-coins[j]];
+				int tmp=memo[i-coins[j]]+1;
 				if(memo[i]==-1 or tmp<memo[i]){
 					memo[i]=tmp;
 				}
