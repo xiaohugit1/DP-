@@ -20,10 +20,10 @@ int mec(int change,int memo[]){
 }
 int main(){
     int k=0;
+    int cnt=10;
     cin>>k;
-    while(1){
+    for(;;cnt--){
         cin>>coins[num++];
-        if(getchar()=='\n') break;
     }
     cout<<mec(k,memo);
 }
